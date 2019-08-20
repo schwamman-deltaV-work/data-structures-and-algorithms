@@ -16,7 +16,7 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   for(let i = 0; i <= str.length; i++) {
-    result.push(str.substring(i));
+    result.push(str.slice(i));
   }
   return result;
 };
@@ -79,8 +79,9 @@ const listFoods = (recipe) => {
   let result = [];
   let ingredients = recipe.ingredients;
   ingredients.forEach(element => {
-    let words = element.split(' ');
-    result.push(words.slice(2, words.length).join(' '));
+    let noAmount = element.slice(element.indexOf(' ') + 1);
+    let noUnits = noAmount.slice(noAmount.indexOf(' ') + 1);
+    result.push(noUnits);
   });
   return result;
 };
