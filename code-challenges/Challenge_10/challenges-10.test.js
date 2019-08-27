@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable camelcase */
 
 'use strict';
 
@@ -14,12 +16,12 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 const count = (target, input) => {
   let count = 0;
   input.forEach(array => {
-    count += (array.reduce((accum, value) => {
+    count += array.reduce((accum, value) => {
       if (target === value) {
         accum++;
       }
       return accum;
-    }, 0));
+    }, 0);
   });
   return count;
 };
@@ -132,10 +134,10 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  return data.filter(character => character.gender === 'male' || character.gender === 'female' ? true : false)
+  return data.filter(character => character.gender === 'male' || character.gender === 'female')
     .reduce((string, character, i) => {
       if (i < 1) {
-        string = character.name
+        string = character.name;
       }
       else {
         string += ` and ${character.name}`;
@@ -158,7 +160,7 @@ let findShortest = (data) => {
       return sumHeight += parseInt(character.height);
     }, 0) / sort.length;
     sort = sort.filter(character => {
-      return parseInt(character.height) < avgHeight ? true : false});
+      return parseInt(character.height) < avgHeight ? true : false;});
   }
   return sort[0].name;
 };
