@@ -42,7 +42,9 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   const salesData = [];
-  data.forEach(hourlySales => )
+  data.forEach((hourlySales, i) => {
+    salesData.push({sales: `${data[i]} cookies`, time: hours[i]});
+  });
   return salesData;
 };
 
@@ -65,7 +67,7 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  return arr[2].items[1].quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -87,7 +89,7 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  return board[row][col] === '#' ? 'hit' : 'miss';
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,7 +101,11 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  return numbers.reduce((accum, arrayProduct) => {
+    return accum * arrayProduct.reduce((accum, num) => {
+      return accum * num;
+    }, 1);
+  }, 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -119,7 +125,17 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let totals = weather.reduce((accum, sum) => {
+    let week = sum.reduce((accum, temp) => {
+      accum.sum += temp;
+      accum.days++;
+      return accum;
+    }, {sum: 0, days: 0});
+    accum.sum += week.sum;
+    accum.days += week.days;
+    return accum;
+  }, {sum: 0, days: 0});
+  return totals.sum / totals.days;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -140,7 +156,22 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  let weeklyAvgs = weather.reduce((avgs, week) => {
+    let weekTotal = week.reduce((sum, temp) => {
+      return sum += temp;
+    }, 0);
+    avgs.push(weekTotal / 7);
+    return avgs;
+  }, []);
+
+  let lowestTemp = 500;
+  weeklyAvgs.forEach(temp => {
+    if(temp < lowestTemp) {
+      lowestTemp = temp;
+    }
+  });
+
+  return lowestTemp;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -156,7 +187,19 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
+  const sums = [];
+
+  const rows = str.split('\n');
+  rows.forEach(row => {
+    let sum = 0;
+    const cols = row.split(',');
+    cols.forEach(col => {
+      const num = parseInt(col);
+      sum += num;
+    });
+    sums.push(sum);
+  });
+  return sums;
 };
 
 /* ------------------------------------------------------------------------------------------------
