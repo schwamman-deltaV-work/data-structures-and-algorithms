@@ -60,7 +60,7 @@ Do not use the vertical bar (pipe) in your pattern.
 const matchMonth = (input) => {
   const monthPattern = /^[Oo]ct(ober)?$/;
 
-  return input.test(monthPattern);
+  return monthPattern.test(monthPattern);
 };
 
 /* ------------------------------------------------------------------------------------------------
