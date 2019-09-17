@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 'use strict';
 
 /* ------------------------------------------------------------------------------------------------
@@ -159,7 +160,7 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  let data = arr.reduce((accum, num, i) => {
+  let data = arr.reduce((accum, num) => {
     accum.count++;
     accum.sum += num;
     return accum;
