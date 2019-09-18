@@ -22,11 +22,13 @@ function insertShiftArray(array, value) {
 
 //Tests ====================================================
 
-describe('insertShiftArray returns the correct data', () => {
+describe('insertShiftArray returns the vaild array', () => {
   let arrayEven = [1,2,3,4,5,6];
   let correctEven = [1,2,3,10,4,5,6];
   let arrayOdd = [8,7,9,1,5];
   let correctOdd = [8,7,9,10,1,5];
+  let emptyArray = [];
+  let correctEmpty = [10];
   let value = 10;
 
   it('returns array data type', () => {
@@ -40,6 +42,9 @@ describe('insertShiftArray returns the correct data', () => {
   })
   it('returns value in middle for odd length array', () => {
     expect(insertShiftArray(arrayOdd, value)).toEqual(correctOdd);
+  })
+  it('returns with an empty starting array', () => {
+    expect(insertShiftArray(emptyArray, value)).toEqual(correctEmpty);
   })
 
 
