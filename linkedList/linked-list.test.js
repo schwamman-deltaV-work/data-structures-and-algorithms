@@ -119,6 +119,7 @@ describe('insertBefore()', () => {
     list.append(2);
     list.append(4);
     list.insertAfter(2, 3);
+    let exception = list.insertBefore(5, 1);
 
     let result = list.toString();
 
@@ -126,17 +127,20 @@ describe('insertBefore()', () => {
     it('Can successfully insert after a node in the middle of the linked list', () => {
       expect(result).toEqual('1 2 3 4');
       expect(list.size).toEqual(4);
+      expect(exception).toEqual('Exception');
     });
 
     let list2 = new LinkedList;
     list2.insert(1);
     list2.append(2);
     list2.insertAfter(2, 3);
+    let exception2 = list.insertAfter(5, 1);
     let result2 = list2.toString();
 
     it('Can successfully insert a node after the last node of the linked list', () => {
       expect(list2.size).toEqual(3);
       expect(result2).toEqual('1 2 3');
+      expect(exception2).toEqual('Exception');
     });
   })
 })

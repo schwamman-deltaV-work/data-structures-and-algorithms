@@ -78,6 +78,8 @@ class LinkedList {
         current.next = newNode;
         this.size++;
       }
+    } else {
+      return 'Exception';
     }
   }
 
@@ -91,6 +93,8 @@ class LinkedList {
       newNode.next = current.next;
       current.next = newNode;
       this.size++;
+    } else {
+      return 'Exception';
     }
   }
 }
