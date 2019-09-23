@@ -23,7 +23,7 @@ describe('insert()', () => {
 
   let parsedList = list.toString();
 
-  it('adds an new node', () => {
+  it('can add a new node', () => {
     expect(list.size).toEqual(10);
     expect(parsedList).toEqual('Do I Look Like I Know What A JPEG Is?');
   })
@@ -61,5 +61,86 @@ describe('toString()', () => {
 
   it('returns all node values as one string', () => {
     expect(list.toString()).toEqual('Do I Look Like I Know What A JPEG Is?');
+  })
+})
+
+describe('append()', () => {
+  let list = new LinkedList;
+  list.insert(2);
+  list.insert(1);
+  list.append(3);
+  let result = list.toString();
+
+  it('can successfully add a node to the end of the linked list', () => {
+    expect(list.size).toEqual(3);
+    expect(result).toEqual('1 2 3');
+  })
+
+  let list2 = new LinkedList;
+  list2.append(4);
+  list2.append(5);
+  let result2 = list2.toString();
+
+  it('can successfully add multiple nodes to the end of a linked list', () => {
+    expect(list2.size).toEqual(2);
+    expect(result2).toEqual('4 5');
+  })
+
+});
+
+describe('insertBefore()', () => {
+  let list = new LinkedList;
+  list.append(1);
+  list.append(2);
+  list.append(4);
+  list.insertBefore(4, 3);
+
+  let result = list.toString();
+
+
+  it('Can successfully insert a node before a node located in the middle of a linked list', () => {
+    expect(result).toEqual('1 2 3 4');
+    expect(list.size).toEqual(4);
+  });
+
+  let list2 = new LinkedList;
+  list2.insert(1);
+  list2.insertBefore(1, 2);
+  let result2 = list2.toString();
+
+  it('Can successfully insert a node before the first node of a linked list', () => {
+    expect(list2.size).toEqual(2);
+    expect(result2).toEqual('2 1');
+  });
+
+  describe('insertAfter()', () => {
+    let list = new LinkedList;
+    list.append(1);
+    list.append(2);
+    list.append(4);
+    list.insertAfter(2, 3);
+    let exception = list.insertBefore(5, 1);
+
+    let result = list.toString();
+
+
+    it('Can successfully insert after a node in the middle of the linked list', () => {
+      expect(result).toEqual('1 2 3 4');
+      expect(list.size).toEqual(4);
+      expect(exception).toEqual('Exception');
+    });
+
+    let list2 = new LinkedList;
+    list2.insert(1);
+    list2.append(2);
+    list2.insertAfter(2, 3);
+    let exception2 = list.insertAfter(5, 1);
+    let result2 = list2.toString();
+
+    it('Can successfully insert a node after the last node of the linked list', () => {
+      expect(list2.size).toEqual(3);
+      expect(result2).toEqual('1 2 3');
+      expect(exception2).toEqual('Exception');
+    });
   })
 })
