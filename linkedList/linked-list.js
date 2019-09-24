@@ -35,6 +35,10 @@ class LinkedList {
 
   //Returns all list values as a string
   toString() {
+    return this.toArray().join(' ');
+  }
+
+  toArray() {
     let result = [];
 
     let current = this.head;
@@ -43,7 +47,7 @@ class LinkedList {
       current = current.next;
     }
 
-    return result.join(' ');
+    return result;
   }
 
   //Adds new node to end of the list
