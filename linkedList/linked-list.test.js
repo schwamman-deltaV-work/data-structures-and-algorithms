@@ -9,7 +9,10 @@ describe('LinkedList', () => {
 })
 
 describe('insert()', () => {
+  // Arrange
   let list = new LinkedList;
+
+  // Act
   list.insert('Is?');
   list.insert('JPEG');
   list.insert('A');
@@ -33,15 +36,21 @@ describe('insert()', () => {
 })
 
 describe('includes()', () => {
+  // Arrange
   let list = new LinkedList;
   list.insert(1);
   list.insert(2);
   list.insert(3);
 
   it('returns true only if value exists', () => {
-    expect(list.includes(2)).toEqual(true);
+    // Act
+    let res = list.includes(2);
+
+    // Assert
+    expect(res).toEqual(true);
   })
   it('returns false if value doesnt exist', () => {
+    // Act + Assert
     expect(list.includes(5)).toEqual(false);
   })
 })
