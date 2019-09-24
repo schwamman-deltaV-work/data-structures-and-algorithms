@@ -117,6 +117,12 @@ class LinkedList {
       throw `${k + 1} (k + 1) is larger than the size of the linked list!`;
     }
   }
+
+  findMiddle() {
+    let middle = Math.floor(this.size / 2);
+    console.log(middle);
+    return this.kthFromEnd(middle);
+  }
 }
 
 module.exports = LinkedList;

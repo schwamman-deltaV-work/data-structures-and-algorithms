@@ -195,6 +195,26 @@ describe('LinkedList', () => {
       expect(list2.kthFromEnd(3)).toEqual(2);
     })
   })
+
+  describe('findMiddle()', () => {
+    it('returns value if linked list has only 1 value', () => {
+      let list = new LinkedList;
+      list.insert(5);
+
+      expect(list.findMiddle()).toEqual(5);
+    })
+
+    it('returns middle value if multiple values in the list', () => {
+      let list = new LinkedList;
+      list.insert(1);
+      list.insert(2);
+      list.insert(3);
+      list.insert(4);
+      list.insert(5);
+
+      expect(list.findMiddle()).toEqual(3);
+    })
+  })
 })
 
 
