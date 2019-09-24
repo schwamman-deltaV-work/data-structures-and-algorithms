@@ -87,7 +87,7 @@ class LinkedList {
         this.size++;
       }
     } else {
-      return 'Exception';
+      throw 'value not found to insert before!';
     }
   }
 
@@ -102,7 +102,7 @@ class LinkedList {
       current.next = newNode;
       this.size++;
     } else {
-      return 'Exception';
+      throw 'value not found to insert after!';
     }
   }
 }

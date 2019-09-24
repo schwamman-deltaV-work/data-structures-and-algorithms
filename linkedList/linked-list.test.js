@@ -85,12 +85,12 @@ describe('append()', () => {
     expect(result).toEqual('1 2 3');
   })
 
-  let list2 = new LinkedList;
-  list2.append(4);
-  list2.append(5);
-  let result2 = list2.toString();
-
   it('can successfully add multiple nodes to the end of a linked list', () => {
+    let list2 = new LinkedList;
+    list2.append(4);
+    list2.append(5);
+    let result2 = list2.toString();
+
     expect(list2.size).toEqual(2);
     expect(result2).toEqual('4 5');
   })
@@ -123,33 +123,36 @@ describe('insertBefore()', () => {
   });
 
   describe('insertAfter()', () => {
-    let list = new LinkedList;
-    list.append(1);
-    list.append(2);
-    list.append(4);
-    list.insertAfter(2, 3);
-    let exception = list.insertBefore(5, 1);
-
-    let result = list.toString();
-
-
     it('Can successfully insert after a node in the middle of the linked list', () => {
+      let list = new LinkedList;
+      list.append(1);
+      list.append(2);
+      list.append(4);
+      list.insertAfter(2, 3);
+
+      let result = list.toString();
+
       expect(result).toEqual('1 2 3 4');
       expect(list.size).toEqual(4);
-      expect(exception).toEqual('Exception');
     });
 
-    let list2 = new LinkedList;
-    list2.insert(1);
-    list2.append(2);
-    list2.insertAfter(2, 3);
-    let exception2 = list.insertAfter(5, 1);
-    let result2 = list2.toString();
+    it('Throws trying to insert after value that does not exist', () => {
+      let list2 = new LinkedList;
+      list2.insert(1);
+      list2.append(2);
+      list2.insertAfter(2, 3);
 
-    it('Can successfully insert a node after the last node of the linked list', () => {
-      expect(list2.size).toEqual(3);
-      expect(result2).toEqual('1 2 3');
-      expect(exception2).toEqual('Exception');
+      expect(() => {
+        list2.insertAfter(5, 1);
+      }).toThrow('value not found to insert after!');
+
+      // This is the harder way to do the above
+      try {
+        list2.insertAfter(5, 1);
+        throw 'should not get here; error expected!'
+      } catch(err) {
+        expect(err).toBe('value not found to insert after!')
+      }
     });
   })
 })
