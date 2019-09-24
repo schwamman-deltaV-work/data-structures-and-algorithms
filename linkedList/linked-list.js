@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 'use strict';
 
 class Node {
@@ -16,11 +15,9 @@ class LinkedList {
 
   //Adds node to beginning of the list
   insert(value) {
-    let current = this.head;
     let newNode = new Node(value);
     newNode.next = this.head;
     this.head = newNode;
-    current = newNode;
     this.size++;
   }
 
