@@ -50,7 +50,10 @@ class LinkedList {
     return result;
   }
 
-  //Adds new node to end of the list
+  /**
+   * Adds new node to end of the list
+   * @param {*} value Value to insert
+   */
   append(value) {
     if(this.head === null) {
       this.insert(value);
@@ -64,7 +67,11 @@ class LinkedList {
     }
   }
 
-  //add a new node with the given newValue immediately before the first value node
+  /**
+   * add a new node with the given newValue immediately before the first value node
+   * @param {*} value Value before which to insert
+   * @param {*} newValue New value to be inserted before value
+   */
   insertBefore(value, newValue) {
     let current = this.head;
     if (this.includes(value)) {
