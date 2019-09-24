@@ -93,17 +93,22 @@ class LinkedList {
 
   insertAfter(value, newValue) {
     let current = this.head;
-    if (this.includes(value)) {
-      while(current.value !== value) {
-        current = current.next;
+    while (current) {
+      if (current.value === value) {
+        break;
       }
-      let newNode = new Node(newValue);
-      newNode.next = current.next;
-      current.next = newNode;
-      this.size++;
-    } else {
+
+      current = current.next;
+    }
+
+    if (current === null) {
       throw 'value not found to insert after!';
     }
+
+    let newNode = new Node(newValue);
+    newNode.next = current.next;
+    current.next = newNode;
+    this.size++;
   }
 }
 
