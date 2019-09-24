@@ -79,7 +79,7 @@ class LinkedList {
         this.size++;
       }
     } else {
-      return 'Exception';
+      throw 'value not found to insert before!';
     }
   }
 
@@ -94,7 +94,27 @@ class LinkedList {
       current.next = newNode;
       this.size++;
     } else {
-      return 'Exception';
+      throw 'value not found to insert after!';
+    }
+  }
+
+  kthFromEnd(k) {
+    if(k < 0) {
+      throw 'kthFromEnd() can not take in a negative number';
+    } else if (this.size > k) {
+      if(this.size === 1) {
+        return this.head.value;
+      }
+      let current = this.head
+      let i = this.size - 1 - k;
+      while (i > 0) {
+        console.log(current, i);
+        current = current.next;
+        i--;
+      }
+      return current.value;
+    } else {
+      throw `${k + 1} (k + 1) is larger than the size of the linked list!`;
     }
   }
 }
