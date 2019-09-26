@@ -8,3 +8,7 @@
 [3. Binary Search](https://github.com/schwamman/data-structures-and-algorithms/blob/master/code-challenges/arrayBinarySearch/README.md)  
 
 [4. Linked Lists](https://github.com/schwamman/data-structures-and-algorithms/blob/master/linkedList/README.md)
+
+[4. Linked Lists - Merge](https://github.com/schwamman/data-structures-and-algorithms/blob/master/code-challenges/llMerge/README.md)
+
+

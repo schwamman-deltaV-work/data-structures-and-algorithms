@@ -108,7 +108,6 @@ class LinkedList {
       let current = this.head
       let i = this.size - 1 - k;
       while (i > 0) {
-        console.log(current, i);
         current = current.next;
         i--;
       }
@@ -120,7 +119,6 @@ class LinkedList {
 
   findMiddle() {
     let middle = Math.floor(this.size / 2);
-    console.log(middle);
     return this.kthFromEnd(middle);
   }
 }
