@@ -28,6 +28,23 @@ class Queue {
     this.size++;
   }
 
+  dequeue() {
+    if(this.size < 1) {
+      let error = 'Nothing to remove! The queue is empty.';
+      throw error;
+    } else {
+      let dequeued = this.front.value;
+      this.front = this.front.previous;
+      this.front.next = null;
+
+      return dequeued;
+    }
+  }
+
+  peek() {
+    return this.front.value;
+  }
+
   toArray() {
     let current = this.front
     let result = [];

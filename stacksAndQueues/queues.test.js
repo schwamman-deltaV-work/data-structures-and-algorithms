@@ -31,6 +31,41 @@ describe('Queue', () => {
     expect(result).toEqual([1, 2, 3]);
   });
 
+  it('returns error if dequeue() on an empty queue', () => {
+    let queue = new Queue;
+
+    try {
+      queue.dequeue();
+    }
+    catch(error) {
+      expect(error).toEqual('Nothing to remove! The queue is empty.')
+    }
+  })
+
+  it('can dequeue() an non-empty queue', () => {
+    let queue = new Queue;
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+
+    let dequeued = queue.dequeue();
+    let results = queue.toArray();
+
+    expect(dequeued).toEqual(1)
+    expect(results).toEqual([2, 3])
+  })
+
+  it('can peek() to return the first value', () => {
+    let queue = new Queue;
+    queue.enqueue('A');
+    queue.enqueue('B');
+    queue.enqueue('C');
+
+    let peeked = queue.peek();
+
+    expect(peeked).toEqual('A')
+  })
+
   it('can toArray() which returns an array from front to back', () => {
     let queue = new Queue;
     queue.enqueue(1);
