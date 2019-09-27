@@ -66,6 +66,17 @@ describe('Queue', () => {
     expect(peeked).toEqual('A')
   })
 
+  it('can peekAtRear() to return the last value', () => {
+    let queue = new Queue;
+    queue.enqueue('A');
+    queue.enqueue('B');
+    queue.enqueue('C');
+
+    let peeked = queue.peekAtRear();
+
+    expect(peeked).toEqual('C')
+  })
+
   it('can toArray() which returns an array from front to back', () => {
     let queue = new Queue;
     queue.enqueue(1);

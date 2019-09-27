@@ -71,8 +71,7 @@ describe('Stack', () => {
 
     let peeked = stack.peek();
 
-    expect(peeked).toHaveProperty('value', 5)
-    expect(peeked).toHaveProperty('next', null);
+    expect(peeked).toEqual(5)
   })
 
   it('can peakAtRear() to return the last node in the stack', () => {

@@ -45,6 +45,10 @@ class Queue {
     return this.front.value;
   }
 
+  peekAtRear() {
+    return this.back.value;
+  }
+
   toArray() {
     let current = this.front
     let result = [];
