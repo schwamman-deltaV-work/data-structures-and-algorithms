@@ -2,7 +2,7 @@
 let Stack = require('./stacks');
 
 describe('Stack', () => {
-  it('can initiate empty stack', () => {
+  it('can instantiate empty stack', () => {
     let stack = new Stack;
     expect(stack).toHaveProperty('top', null)
     expect(stack).toHaveProperty('size', 0)
@@ -59,7 +59,7 @@ describe('Stack', () => {
     stack.push('Bottles');
 
     let popped = stack.pop();
-    console.log(popped.next);
+    expect(stack).toHaveProperty('size', 3);
     expect(popped).toHaveProperty('value', 'Bottles');
     expect(popped).toHaveProperty('next', {'next': {'next': {'next': null, 'value': 'Ice'}, 'value': 'The'}, 'value': 'In'});
     expect(stack).toHaveProperty('top', {'next': {'next': {'next': null, 'value': 'Ice'}, 'value': 'The'}, 'value': 'In'});

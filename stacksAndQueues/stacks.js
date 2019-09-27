@@ -21,13 +21,13 @@ class Stack {
   }
 
   pop() {
-    console.log(this.top);
     if(this.top === null) {
       let error = 'Cannot pop from an empty stack';
       throw error;
     }
     let popped = this.top;
     this.top = this.top.next;
+    this.size--;
     return popped;
   }
 
