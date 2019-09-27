@@ -9,6 +9,8 @@
 
 [4. Linked Lists](https://github.com/schwamman/data-structures-and-algorithms/blob/master/linkedList/README.md)
 
-[4. Linked Lists - Merge](https://github.com/schwamman/data-structures-and-algorithms/blob/master/code-challenges/llMerge/README.md)
+[5. Linked Lists - Merge](https://github.com/schwamman/data-structures-and-algorithms/blob/master/code-challenges/llMerge/README.md)
+
+[6. Stacks and Queues](https://github.com/schwamman/data-structures-and-algorithms/blob/master/stacksAndQueues/README.md)
 
 
