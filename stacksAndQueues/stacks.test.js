@@ -33,9 +33,7 @@ describe('Stack', () => {
 
     let popped = stack.pop();
 
-    expect(popped).toHaveProperty('value', 5);
-    expect(popped).toHaveProperty('next', null);
-    expect(stack).toHaveProperty('top', null);
+    expect(popped).toEqual(5);
   })
 
   it('throws error if pop() is used on empty stack', () => {
@@ -60,8 +58,7 @@ describe('Stack', () => {
 
     let popped = stack.pop();
     expect(stack).toHaveProperty('size', 3);
-    expect(popped).toHaveProperty('value', 'Bottles');
-    expect(popped).toHaveProperty('next', {'next': {'next': {'next': null, 'value': 'Ice'}, 'value': 'The'}, 'value': 'In'});
+    expect(popped).toEqual('Bottles');
     expect(stack).toHaveProperty('top', {'next': {'next': {'next': null, 'value': 'Ice'}, 'value': 'The'}, 'value': 'In'});
   })
 

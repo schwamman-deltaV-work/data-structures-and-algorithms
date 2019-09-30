@@ -1,22 +1,24 @@
 'use strict';
-let Queue = require('./queues');
+
+'use strict';
+let Queue = require('./queue-with-stacks');
 
 describe('Queue', () => {
   it('can instantiate an empty queue', () => {
     let queue = new Queue;
 
-    expect(queue).toHaveProperty('front', null)
-    expect(queue).toHaveProperty('back', null);
-    expect(queue).toHaveProperty('size', 0);
+    expect(queue.stack1).toHaveProperty('top', null)
+    expect(queue.stack2).toHaveProperty('top', null)
+    expect(queue.stack1).toHaveProperty('size', 0);
+    expect(queue.stack2).toHaveProperty('size', 0);
   });
 
   it('can enqueue() to any empty stack', () => {
     let queue = new Queue;
     queue.enqueue(5);
 
-    expect(queue).toHaveProperty('size', 1);
-    expect(queue).toHaveProperty('back', {'next': null, 'previous': null, 'value': 5})
-    expect(queue).toHaveProperty('front', {'next': null, 'previous': null, 'value': 5})
+    expect(queue.stack1).toHaveProperty('size', 1);
+    expect(queue.stack1).toHaveProperty('top', {'next': null, 'value': 5})
   });
 
   it('can enqueue() to a non-empty stack', () => {
@@ -27,7 +29,7 @@ describe('Queue', () => {
 
     let result = queue.toArray();
 
-    expect(queue).toHaveProperty('size', 3);
+    expect(queue.stack1).toHaveProperty('size', 3);
     expect(result).toEqual([1, 2, 3]);
   });
 
@@ -55,28 +57,6 @@ describe('Queue', () => {
     expect(results).toEqual([2, 3])
   })
 
-  it('can peek() to return the first value', () => {
-    let queue = new Queue;
-    queue.enqueue('A');
-    queue.enqueue('B');
-    queue.enqueue('C');
-
-    let peeked = queue.peek();
-
-    expect(peeked).toEqual('A')
-  })
-
-  it('can peekAtRear() to return the last value', () => {
-    let queue = new Queue;
-    queue.enqueue('A');
-    queue.enqueue('B');
-    queue.enqueue('C');
-
-    let peeked = queue.peekAtRear();
-
-    expect(peeked).toEqual('C')
-  })
-
   it('can toArray() which returns an array from front to back', () => {
     let queue = new Queue;
     queue.enqueue(1);
@@ -88,4 +68,19 @@ describe('Queue', () => {
     expect(array).toEqual([1, 2, 3])
     expect(array.length).toEqual(queue.size)
   });
+
+  it('can toArray() after enqueueing and dequeueing', () => {
+    let queue = new Queue;
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    queue.dequeue();
+    queue.enqueue(4);
+    queue.enqueue(5);
+
+    let array = queue.toArray();
+
+    expect(array.length).toEqual(queue.size)
+    expect(array).toEqual([2, 3, 4, 5])
+  })
 })

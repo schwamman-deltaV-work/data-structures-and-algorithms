@@ -25,7 +25,7 @@ class Stack {
       let error = 'Cannot pop from an empty stack';
       throw error;
     }
-    let popped = this.top;
+    let popped = this.top.value;
     this.top = this.top.next;
     this.size--;
     return popped;
