@@ -16,15 +16,33 @@ class AnimalShelter {
   }
 
   enqueue(animal) {
-    this.list.insert(animal);
+    this.list.append(animal);
   }
 
   dequeue(pref) {
     if (this.list.size === 0) {
       throw 'Sorry, there are no animals in the shelter.';
+    } else if (pref) {
+      let removed;
+      let current = this.list.head;
+      let previous = current;
+      while(current.next) {
+        previous = current;
+        if (current.value.constructor.name === pref) {
+          break;
+        }
+        current = current.next;
+      }
+      if (current.next === null) {
+        throw `No ${pref}s currently in the shelter.`;
+      } else {
+        removed = current.value;
+      }
+      current.next = current.next.next;
+    } else {
+
     }
   }
-
 }
 
 module.exports = AnimalShelter;

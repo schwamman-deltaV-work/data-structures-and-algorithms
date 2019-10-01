@@ -23,7 +23,6 @@ describe('AnimalShelter', () => {
     shelter.enqueue(dog);
     shelter.enqueue(cat);
 
-    console.log(shelter);
     expect(shelter.list).toHaveProperty('head', {'next': {'next': null, 'value': {'breed': 'Tiger', 'name': 'Tigger'}}, 'value': {'breed': 'Mutt', 'name': 'Clifford'}});
   })
 
@@ -37,6 +36,14 @@ describe('AnimalShelter', () => {
   })
 
   it('can dequeue() from a non-empty shelter', () => {
+    let shelter = new AnimalShelter;
+    shelter.enqueue(dog);
+    shelter.enqueue(cat);
 
+    console.log(shelter);
+
+    let dequeued = shelter.dequeue('Dog');
+
+    expect(dequeued).toEqual({'name': 'Clifford', 'breed': 'Mutt'});
   })
 })
