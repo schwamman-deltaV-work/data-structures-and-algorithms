@@ -15,6 +15,7 @@ const cases = [
   ['}', false],
   ['(', false],
   ['hell[o', false],
+  ['({)}', false],
   [']', false],
   ['([]', false]
 ];
