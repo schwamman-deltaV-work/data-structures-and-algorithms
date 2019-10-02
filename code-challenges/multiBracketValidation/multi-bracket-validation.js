@@ -20,7 +20,6 @@ function multiBracketValidation(input) {
         if (input[i] !== map[popped]) {
           return false;
         }
-      // eslint-disable-next-line no-empty
       } catch(err) {
         if (inputStack.size === 0 && (input[i] === ')' || input[i] === '}' || input[i] === ']')) {
           return false;
