@@ -1,14 +1,6 @@
 'use strict';
 
-const { Cat, Dog, Animal } = require('./animal-classes');
 const LinkedList = require('../../linkedList/linked-list');
-
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
 
 class AnimalShelter {
   constructor() {
