@@ -121,6 +121,20 @@ class LinkedList {
     let middle = Math.floor(this.size / 2);
     return this.kthFromEnd(middle);
   }
+
+  //removes the last/bottom node in the list
+  removeLast() {
+    let current = this.list.head;
+    let result = current;
+    while(current.next) {
+      result = current;
+      current = current.next;
+    }
+    let value = result.next.value
+    result.next = null;
+    return value;
+  }
+
 }
 
 module.exports = LinkedList;
