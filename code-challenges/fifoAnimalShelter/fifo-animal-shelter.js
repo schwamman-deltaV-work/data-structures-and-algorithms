@@ -23,24 +23,25 @@ class AnimalShelter {
     if (this.list.size === 0) {
       throw 'Sorry, there are no animals in the shelter.';
     } else if (pref) {
-      let removed;
       let current = this.list.head;
-      let previous = current;
+      if (current.value.constructor.name === pref) {
+        this.list.head = current.next;
+        return current.value;
+      }
+
       while(current.next) {
-        previous = current;
-        if (current.value.constructor.name === pref) {
-          break;
+        if (current.next.value.constructor.name === pref) {
+          let result = current.next.value;
+          current.next = current.next.next;
+          return result;
         }
         current = current.next;
       }
-      if (current.next === null) {
-        throw `No ${pref}s currently in the shelter.`;
-      } else {
-        removed = current.value;
-      }
-      current.next = current.next.next;
+      return null;
     } else {
-
+      let current = this.list.head;
+      this.list.head = current.next;
+      return current.value;
     }
   }
 }
