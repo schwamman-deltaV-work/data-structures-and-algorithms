@@ -13,4 +13,12 @@
 
 [6. Stacks and Queues](https://github.com/schwamman/data-structures-and-algorithms/blob/master/stacksAndQueues/README.md)
 
+[7. Queue using Stacks](https://github.com/schwamman/data-structures-and-algorithms/blob/master/code-challenges/queueWithStacks/README.md)
+
+[8. First In First Out - Animal Shelter](https://github.com/schwamman/data-structures-and-algorithms/blob/master/code-challenges/fifoAnimalShelter/README.md)
+
+[9. Bracket Validation](https://github.com/schwamman/data-structures-and-algorithms/blob/master/code-challenges/multiBracketValidation/README.md)
+
+[10. Trees](https://github.com/schwamman/data-structures-and-algorithms/blob/master/tree/README.md)
+
 

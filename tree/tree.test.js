@@ -51,6 +51,15 @@ describe('BinarySearchTree', () => {
     expect(result).toEqual([10, 2, 7, 7, 13]);
   });
 
+  it('preOrder() throws error if nothing in tree', () => {
+    let tree = new BinarySearchTree();
+    try {
+      tree.preOrder();
+    } catch(error) {
+      expect(error).toEqual('The tree is empty!');
+    }
+  });
+
   it('inOrder() can successfully return a collection from an inorder traversal', () => {
     let tree = new BinarySearchTree(10);
     tree.add(2);
@@ -62,7 +71,16 @@ describe('BinarySearchTree', () => {
 
     expect(tree.size).toEqual(result.length);
     expect(result).toEqual([2, 7, 7, 10, 13]);
-  })
+  });
+
+  it('inOrder() throws error if nothing in tree', () => {
+    let tree = new BinarySearchTree();
+    try {
+      tree.inOrder();
+    } catch(error) {
+      expect(error).toEqual('The tree is empty!');
+    }
+  });
 
   it('postOrder() can successfully return a collection from a postorder traversal', () => {
     let tree = new BinarySearchTree(10);
@@ -75,6 +93,15 @@ describe('BinarySearchTree', () => {
 
     expect(tree.size).toEqual(result.length);
     expect(result).toEqual([7, 7, 2, 13, 10]);
+  });
+
+  it('postOrder() throws error if nothing in tree', () => {
+    let tree = new BinarySearchTree();
+    try {
+      tree.postOrder();
+    } catch(error) {
+      expect(error).toEqual('The tree is empty!');
+    }
   });
 
   it('contains() returns false if value not in tree', () => {

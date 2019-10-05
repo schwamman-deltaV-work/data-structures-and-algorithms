@@ -15,6 +15,9 @@ class BinaryTree {
   }
 
   preOrder(root = this.root, values = []) {
+    if(!this.root) {
+      throw 'The tree is empty!';
+    }
     values.push(root.value);
     if (root.left) {
       this.preOrder(root.left, values);
@@ -26,6 +29,9 @@ class BinaryTree {
   }
 
   inOrder(root = this.root, values = []) {
+    if(!this.root) {
+      throw 'The tree is empty!';
+    }
     if (root.left) {
       this.inOrder(root.left, values);
     }
@@ -37,6 +43,9 @@ class BinaryTree {
   }
 
   postOrder(root = this.root, values = []) {
+    if(!this.root) {
+      throw 'The tree is empty!';
+    }
     if (root.left) {
       this.postOrder(root.left, values);
     }
