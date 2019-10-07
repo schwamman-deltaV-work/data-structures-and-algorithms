@@ -19,5 +19,6 @@ Conduct “FizzBuzz” on a tree while traversing through it. Change the values 
 ![whiteboard_image](./FizzBuzz.jpg)
 
 ## Links
-[pull request](https://github.com/schwamman/data-structures-and-algorithms/pull/30)
-[travis](https://www.travis-ci.com/schwamman/data-structures-and-algorithms)
+[Pull Request](https://github.com/schwamman/data-structures-and-algorithms/pull/30)  
+
+[Travis](https://www.travis-ci.com/schwamman/data-structures-and-algorithms)
