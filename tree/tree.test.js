@@ -1,6 +1,6 @@
 'used strict';
 
-const BinarySearchTree = require('./tree');
+const { BinarySearchTree } = require('./tree');
 
 describe('BinarySearchTree', () => {
   it('can instantiate an empty binary tree', () => {
@@ -17,7 +17,6 @@ describe('BinarySearchTree', () => {
     //Can instantiate empty tree and then add root value
     let tree2 = new BinarySearchTree();
     tree2.add(5);
-    console.log(tree2);
 
     expect(tree).toHaveProperty('size', 1);
     expect(tree.root).toHaveProperty('value', 5);

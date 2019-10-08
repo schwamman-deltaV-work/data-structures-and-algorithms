@@ -1,7 +1,7 @@
 'use strict';
 
 const fizzBuzzTree = require('./fizz-buzz-tree');
-const BinarySearchTree = require('../../tree/tree');
+const { BinarySearchTree } = require('../../tree/tree');
 
 describe('fizzBuzzTree()', () => {
 
