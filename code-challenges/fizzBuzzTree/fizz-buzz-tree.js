@@ -14,11 +14,11 @@ function fizzBuzzTree(tree) {
   return tree;
 
   function traverseTree(root) {
-    if (root.value % 15 === 0) {
+    if (root.value % 15 === 0 && root.value !== 0) {
       root.value = 'FizzBuzz';
-    } else if (root.value % 3 === 0) {
+    } else if (root.value % 3 === 0 && root.value !== 0) {
       root.value = 'Fizz';
-    } else if (root.value % 5 === 0) {
+    } else if (root.value % 5 === 0 && root.value !== 0) {
       root.value = 'Buzz';
     }
 
