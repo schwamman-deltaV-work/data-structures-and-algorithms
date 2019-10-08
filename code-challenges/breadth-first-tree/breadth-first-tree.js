@@ -1,9 +1,9 @@
 'use strict';
 
-const { _ , BinaryTree } = require('../../tree/tree');
+const { BinarySearchTree } = require('../../tree/tree');
 const Queue = require('../../stacksAndQueues/queues');
 
-class BreadthFirstTree extends BinaryTree {
+class BreadthFirstTree extends BinarySearchTree {
   constructor(value) {
     super(value);
   }
@@ -29,6 +29,7 @@ class BreadthFirstTree extends BinaryTree {
       }
     }
 
+    return results;
   }
 }
 

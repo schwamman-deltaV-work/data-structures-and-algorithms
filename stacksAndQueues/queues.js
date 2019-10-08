@@ -32,13 +32,19 @@ class Queue {
     if(this.size < 1) {
       let error = 'Nothing to remove! The queue is empty.';
       throw error;
+    } else if (this.size === 1) {
+      let dequeued = this.front.value;
+      this.front = null;
+      this.back = null;
+
+      this.size--;
+      return dequeued;
     } else {
       let dequeued = this.front.value;
       this.front = this.front.previous;
-      if(this.front) {
-        this.front.next = null;
-      }      
+      this.front.next = null;
 
+      this.size--;
       return dequeued;
     }
   }

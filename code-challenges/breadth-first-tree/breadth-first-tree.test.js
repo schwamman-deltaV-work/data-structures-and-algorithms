@@ -16,14 +16,18 @@ describe('BreadthFirstTree method breadthFirst()', () => {
 
     let result = tree.breadthFirst();
 
-    expect(result).toEqual(5);
+    expect(result).toEqual([5]);
   });
 
   it('returns array in correct order in tree with multiple values', () => {
-    let tree = new BreadthFirstTree;
+    let tree = new BreadthFirstTree(5);
+    tree.add(7);
+    tree.add(3);
+    tree.add(0);
+    tree.add(5);
 
     let result = tree.breadthFirst();
 
-    expect(result).toEqual([]);
+    expect(result).toEqual([5, 3, 7, 0, 5]);
   });
 });
