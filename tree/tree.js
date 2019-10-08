@@ -10,7 +10,7 @@ class Node {
 
 class BinaryTree {
   constructor(value = null) {
-    this.root = value ? new Node(value) : value;
+    this.root = value || value === 0 ? new Node(value) : value;
     this.size = value ? 1 : 0;
   }
 

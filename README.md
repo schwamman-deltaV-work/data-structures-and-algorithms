@@ -21,4 +21,6 @@
 
 [10. Trees](https://github.com/schwamman/data-structures-and-algorithms/blob/master/tree/README.md)
 
+[11. FizzBuzz Tree](https://github.com/schwamman/data-structures-and-algorithms/blob/master/code-challenges/fizzBuzzTree/README.md)
+
 
