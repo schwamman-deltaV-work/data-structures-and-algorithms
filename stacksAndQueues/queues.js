@@ -35,14 +35,17 @@ class Queue {
     } else {
       let dequeued = this.front.value;
       this.front = this.front.previous;
-      this.front.next = null;
+      if(this.front) {
+        this.front.next = null;
+      }      
 
       return dequeued;
     }
   }
 
   peek() {
-    return this.front.value;
+    return this.front ? this.front.value : null;
+    // return this.front.value;
   }
 
   peekAtRear() {
