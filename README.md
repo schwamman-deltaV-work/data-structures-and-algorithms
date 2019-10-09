@@ -23,4 +23,5 @@
 
 [11. FizzBuzz Tree](https://github.com/schwamman/data-structures-and-algorithms/blob/master/code-challenges/fizzBuzzTree/README.md)
 
+[12. Find Max Tree](https://github.com/schwamman/data-structures-and-algorithms/blob/master/code-challenges/find-max-binary-tree/README.md)
 
