@@ -25,3 +25,5 @@
 
 [12. Find Max Tree](https://github.com/schwamman/data-structures-and-algorithms/blob/master/code-challenges/find-max-binary-tree/README.md)
 
+[13. Insertion Sort](https://github.com/schwamman/data-structures-and-algorithms/blob/master/code-challenges/insertion-sort/BLOG.md)
+
