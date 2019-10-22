@@ -27,3 +27,5 @@
 
 [13. Insertion Sort](https://github.com/schwamman/data-structures-and-algorithms/blob/master/code-challenges/insertion-sort/BLOG.md)
 
+[13. Merge Sort](https://github.com/schwamman/data-structures-and-algorithms/blob/master/code-challenges/merge-sort/BLOG.md)
+
