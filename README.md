@@ -29,3 +29,6 @@
 
 [13. Merge Sort](https://github.com/schwamman/data-structures-and-algorithms/blob/master/code-challenges/merge-sort/BLOG.md)
 
+[13. Quick Sort](https://github.com/schwamman/data-structures-and-algorithms/blob/master/code-challenges/quick-sort/BLOG.md)
+
+
