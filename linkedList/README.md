@@ -14,4 +14,3 @@ Implement a Singly Linked List Data Structure
 
 ## Approach & Efficiency
 I created 2 classes, a Node class used to create new nodes and a LinkedList class with all required methods. 
-
