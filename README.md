@@ -33,4 +33,3 @@
 
 [14. Hash Table](https://github.com/schwamman/data-structures-and-algorithms/blob/master/hashtable/README.md)
 
-
