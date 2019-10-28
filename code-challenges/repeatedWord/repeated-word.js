@@ -2,7 +2,6 @@
 const Hashtable = require('../../hashtable/hashtable');
 
 function checkRepeated(string) {
-  let repeatedWords = [];
   let hashtable = new Hashtable(1024);
   let regex = / |,|\.|!|\?/;
   let words = string.split(regex);
