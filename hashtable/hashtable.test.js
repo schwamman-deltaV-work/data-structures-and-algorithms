@@ -78,8 +78,6 @@ describe('Hashtable', () => {
     hashtable.add('randomkey', 'value');
     let value = hashtable.get('randomkey');
 
-    console.log(hashtable.array[0].head);
-
     expect(value).toEqual('value');
   });
 
