@@ -21,8 +21,8 @@ describe('Graph', () => {
 
   it('cannot add the same vertex more than once', () => {
     let graph = new Graph;
-    let result = graph.addNode('A');
-    
+    graph.addNode('A');
+
     try {
       graph.addNode('A');
     } catch(error) {
