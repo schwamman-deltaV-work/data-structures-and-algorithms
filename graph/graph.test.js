@@ -61,10 +61,12 @@ describe('Graph', () => {
 
   it('can return all vertices', () => {
     let graph = new Graph;
+    let emptyGraph = graph.getNodes();
     graph.addNode('A');
     graph.addNode('B');
-
     let result = graph.getNodes();
+
+    expect(emptyGraph).toEqual(null);
 
     expect(result[0]).toHaveProperty('vertex');
     expect(result[0]).toHaveProperty('neighbors');

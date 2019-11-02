@@ -27,6 +27,9 @@ class Graph {
   }
 
   getNodes() {
+    if(this.size === 0) {
+      return null;
+    }
     let result = [];
     for(let [key, value] of this.adjList) {
       let obj = {};
