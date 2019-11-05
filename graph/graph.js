@@ -42,7 +42,6 @@ class Graph {
 
   getNeighbors(vertex) {
     let neighbors = this.adjList.get(vertex);
-    console.log(neighbors);
     return neighbors;
   }
 
