@@ -15,17 +15,18 @@ function depthFirst(adjList, root) {
   stack.push(root);
 
   while(stack.size > 0) {
-    let top = stack.peek();
+    let top = stack.pop();
+    if (!visited.has(top)) {
+      visited.add(top);
+      result.push(top);
+    }
+
     let neighbors = adjList.get(top);
 
     let unvistedNodes = getUnvisited(neighbors, visited);
-
     if (unvistedNodes.length > 0) {
       unvistedNodes.forEach( node => stack.push(node));
-    } else if (unvistedNodes.length === 0) {
-      result.unshift(stack.pop());
     }
-    visited.add(top);
   }
 
   return result;
